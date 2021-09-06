@@ -61,7 +61,7 @@ class UserController extends Controller
 
         $request->file("photo_profil")->storePublicly("img", "public");
 
-        return redirect()->route("users.index");
+        return redirect()->route("users.index")->with('message', 'On est bons');
     }
 
     /**
@@ -119,7 +119,7 @@ class UserController extends Controller
 
         $request->file("photo_profil")->storePublicly("img", "public");
 
-        return redirect()->route("users.index");
+        return redirect()->route("users.index")->with('message', 'Update');
     }
 
     /**
@@ -134,6 +134,6 @@ class UserController extends Controller
 
         $user->delete();
 
-        return redirect()->route("users.index");
+        return redirect()->route("users.index")->with('message', 'Supprimé');
     }
 }

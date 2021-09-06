@@ -55,7 +55,7 @@ class ArticleController extends Controller
 
         $request->file("photo_profil")->storePublicly("img", "public");
 
-        return redirect()->route("articles.index");
+        return redirect()->route("articles.index")->with('message', 'Article ajouté');
 
     }
 
@@ -108,7 +108,7 @@ class ArticleController extends Controller
 
         $request->file("photo_profil")->storePublicly("img", "public");
 
-        return redirect()->route("articles.index");
+        return redirect()->route("articles.index")->with('message', 'Update');
     }
 
     /**
@@ -123,6 +123,6 @@ class ArticleController extends Controller
 
         $article->delete();
 
-        return redirect()->route("articles.index");
+        return redirect()->route("articles.index")->with('message', 'Article Supprimé');
     }
 }

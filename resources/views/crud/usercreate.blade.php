@@ -16,6 +16,8 @@
         </div>
     @endif
 
+
+
     <form action="{{ route('users.store') }}" method="post" enctype="multipart/form-data">
     @csrf
         <div class="mb-3">
